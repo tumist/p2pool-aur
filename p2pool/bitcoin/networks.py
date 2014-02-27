@@ -188,7 +188,8 @@ nets = dict(
             'AuroraCoinaddress' in (yield bitcoind.rpc_help()) and
             not (yield bitcoind.rpc_getinfo())['testnet']
         )),
-        SUBSIDY_FUNC=lambda height: 25*100000000 >> (height + 1)//210000,
+        SUBSIDY_FUNC=lambda height: 25*100000000 >> (height + 1)//420000 if height <= 5450 else \
+                                    125*10000000 >> (height + 1)//420000,
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
         BLOCK_PERIOD=150,
         SYMBOL='AUR',
