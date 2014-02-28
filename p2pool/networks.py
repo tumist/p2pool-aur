@@ -137,7 +137,7 @@ nets = dict(
         MAX_TARGET=2**256//2**20 - 1,
         PERSIST=True,
         WORKER_PORT=12347,
-        BOOTSTRAP_ADDRS='5.9.157.150'.split(' '),
+        BOOTSTRAP_ADDRS='5.9.157.150 144.76.107.81'.split(' '),
         ANNOUNCE_CHANNEL='#p2pool-aur',
         VERSION_CHECK=lambda v: True,
         VERSION_WARNING=lambda v: 'Upgrade AuroraCoin to >=1.0.1!' if v < 1010000 else None,
