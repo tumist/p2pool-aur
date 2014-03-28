@@ -540,6 +540,12 @@ class OkayTracker(forest.Tracker):
         
         block_height = max(block_rel_height_func(share.header['previous_block']) for share in
             self.verified.get_chain(end_point, self.net.CHAIN_LENGTH//16))
+
+        #auroracoin BLOCK_PERIOD change hack (remove after block 5400)
+        if block_height <= 5400:
+            self.net.PARENT.BLOCK_PERIOD=600
+        else:
+            self.net.PARENT.BLOCK_PERIOD=300
         
         return self.net.CHAIN_LENGTH, self.verified.get_delta(share_hash, end_point).work/((0 - block_height + 1)*self.net.PARENT.BLOCK_PERIOD)
 

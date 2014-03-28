@@ -1,7 +1,7 @@
 Requirements:
 -------------------------
 Generic:
-* AuroraCoin >=1.0.1
+* AuroraCoin >=1.2.0.0
 * Python >=2.6
 * Twisted >=10.0.0
 * python-argparse (for Python =2.6)
