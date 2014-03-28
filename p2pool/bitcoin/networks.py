@@ -191,7 +191,7 @@ nets = dict(
         SUBSIDY_FUNC=lambda height: 25*100000000 >> (height + 1)//420000 if height <= 5450 else \
                                     125*10000000 >> (height + 1)//420000,
         POW_FUNC=lambda data: pack.IntType(256).unpack(__import__('ltc_scrypt').getPoWHash(data)),
-        BLOCK_PERIOD=150,
+        BLOCK_PERIOD=300,
         SYMBOL='AUR',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'AuroraCoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/AuroraCoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.AuroraCoin'), 'AuroraCoin.conf'),
         BLOCK_EXPLORER_URL_PREFIX='http://blockexplorer.auroracoin.eu/block/',
